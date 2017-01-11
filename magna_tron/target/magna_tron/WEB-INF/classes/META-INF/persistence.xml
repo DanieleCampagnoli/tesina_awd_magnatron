@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+  <persistence-unit name="magnaTronPersistenceUnit" transaction-type="JTA"> 
+  <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <jta-data-source>JDBC_magna_tron</jta-data-source>
+    <non-jta-data-source>JDBC_magna_tron</non-jta-data-source>
+    <class>magna_tron.model.MenuGiornaliero</class>
+    <class>magna_tron.model.MenuGiornalieroPK</class>
+    <class>magna_tron.model.MenuSettimanale</class>
+    <class>magna_tron.model.Persona</class>
+    <class>magna_tron.model.Piatto</class>
+    <class>magna_tron.model.Primo</class>
+    <class>magna_tron.model.Secondo</class>
+    <class>magna_tron.model.Contorno</class>
+    <class>magna_tron.model.Dessert</class>
+    <class>magna_tron.model.ScelteMenu</class>
+    <class>magna_tron.model.ScelteMenuPK</class>
+    <class>magna_tron.model.Impiegato</class>
+    <class>magna_tron.model.Amministratore</class>
+    <class>magna_tron.model.Cuoco</class>
+    
+    <properties>
+        <property name="eclipselink.logging.level" value="FINEST"/>
+    </properties>
+    
+  </persistence-unit>
+</persistence>

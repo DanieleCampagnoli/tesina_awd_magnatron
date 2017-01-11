@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+	<title>Facelet Title</title>
+</h:head>
+<h:body>
+         <!-- navigazione -->
+        <div id="userBar">
+           <ui:insert name="userBar">
+               <ui:include src="/template/userBar.xhtml"/>
+            </ui:insert>
+        </div>
+        <!-- parametri di ricerca spese -->
+ 	<h:form>
+		<h3>Calcolo Spese</h3>
+		<h:outputText value="Data Inizio" />
+		<h:inputText id="dataInizio" value="#{menu.dataInizio}" 
+                             converterMessage="#{msgIT.dateValidation}">
+                    <f:convertDateTime pattern="yyyy-MM-dd"/>
+                </h:inputText>
+                <h:message for="dataInizio" class="validationError" ></h:message>
+		<br></br><br></br>                
+                <h:outputText value="Data Fine" />
+                <h:inputText id="dataFine" value="#{menu.dataFine}"
+                             converterMessage="#{msgIT.dateValidation}">
+                    <f:convertDateTime pattern="yyyy-MM-dd"/>
+                </h:inputText>
+                <h:message for="dataFine" class="validationError"></h:message>
+		<br></br><br></br>
+		<h:commandButton action="#{menu.setImpiegatoSpesa}" value="cerca"/>
+	</h:form>
+        <!-- visualizzazione spese -->
+        <h:dataTable value="#{menu.speseKeyList}" var="key">
+                        <h:column>
+    				<f:facet name="header">matricola</f:facet>
+    		                <h:outputText value="#{key.matricola}"/>   
+    			</h:column>
+                        <h:column>
+    				<f:facet name="header">nome</f:facet>
+    		                <h:outputText value="#{key.nome}"/>   
+    			</h:column>
+                        <h:column>
+    				<f:facet name="header">cognome</f:facet>
+                                <h:outputText value="#{key.cognome}"/>   
+    			</h:column>            
+                        <h:column>
+    				<f:facet name="header">spesa</f:facet>
+                                <h:outputText value="#{menu.spese[key]}">
+                                    <f:convertNumber minFractionDigits="2" />
+                                </h:outputText>    
+    			</h:column>
+        </h:dataTable>
+</h:body>
+</html>

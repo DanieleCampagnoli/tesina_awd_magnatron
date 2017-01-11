@@ -1,0 +1,7 @@
+magna_tron.controller
+magna_tron.controller.util
+magna_tron.ejb
+magna_tron.ejb.exception
+magna_tron.ejb.utils
+magna_tron.model
+magna_tron.model.exception

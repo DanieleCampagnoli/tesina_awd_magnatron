@@ -1,0 +1,168 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+  
+        <application>
+	  <resource-bundle>
+		<base-name>messages.it.message</base-name>
+		<var>msgIT</var>
+	   </resource-bundle>
+        </application>     
+
+      <!-- LOGIN.XHTML -->
+    	<navigation-rule>
+		<from-view-id>/login.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>amministratore</from-outcome>
+			<to-view-id>/amministratore/home.xhtml</to-view-id>
+                        <redirect/>
+		</navigation-case>
+                <navigation-case>
+                       <from-outcome>cuoco</from-outcome>
+	               <to-view-id>/cuoco/home.xhtml</to-view-id>
+                       <redirect/>
+                </navigation-case>
+                <navigation-case>
+                       <from-outcome>impiegato</from-outcome>
+	               <to-view-id>/impiegato/home.xhtml</to-view-id>
+                       <redirect/>
+                </navigation-case>
+	</navigation-rule>
+        <!-- /CUOCO/HOME.XHTML -->
+        <navigation-rule>
+            <from-view-id>/cuoco/home.xhtml</from-view-id>    
+             <navigation-case>
+                       <from-outcome>login</from-outcome>
+	               <to-view-id>/login.xhtml</to-view-id>
+                       <redirect/>
+               </navigation-case>
+               <navigation-case>
+                       <from-outcome>menu</from-outcome>
+	               <to-view-id>/cuoco/menu.xhtml</to-view-id>
+               </navigation-case>
+               <navigation-case>
+                       <from-outcome>piatto</from-outcome>
+	               <to-view-id>/cuoco/piatto.xhtml</to-view-id>
+               </navigation-case>
+              <navigation-case>
+                       <from-outcome>home</from-outcome>
+	               <to-view-id>/cuoco/home.xhtml</to-view-id>
+               </navigation-case>
+               <navigation-case>
+                       <from-outcome>ordini</from-outcome>
+	               <to-view-id>/cuoco/ordini.xhtml</to-view-id>
+               </navigation-case>                   
+        </navigation-rule>
+        <!-- /CUOCO/PIATTO.XHTML -->
+        <navigation-rule>
+            <from-view-id>/cuoco/piatto.xhtml</from-view-id>    
+             <navigation-case>
+                       <from-outcome>login</from-outcome>
+	               <to-view-id>/login.xhtml</to-view-id>
+                       <redirect/>
+               </navigation-case>
+               <navigation-case>
+                       <from-outcome>menu</from-outcome>
+	               <to-view-id>/cuoco/menu.xhtml</to-view-id>
+               </navigation-case>
+               <navigation-case>
+                       <from-outcome>piatto</from-outcome>
+	               <to-view-id>/cuoco/piatto.xhtml</to-view-id>
+               </navigation-case>
+              <navigation-case>
+                       <from-outcome>home</from-outcome>
+	               <to-view-id>/cuoco/home.xhtml</to-view-id>
+               </navigation-case>
+               <navigation-case>
+                       <from-outcome>ordini</from-outcome>
+	               <to-view-id>/cuoco/ordini.xhtml</to-view-id>
+               </navigation-case>                   
+        </navigation-rule>
+        <!-- /CUOCO/MENU.XHTML -->
+        <navigation-rule>
+            <from-view-id>/cuoco/menu.xhtml</from-view-id>    
+             <navigation-case>
+                       <from-outcome>login</from-outcome>
+	               <to-view-id>/login.xhtml</to-view-id>
+                       <redirect/>
+               </navigation-case>
+               <navigation-case>
+                       <from-outcome>menu</from-outcome>
+	               <to-view-id>/cuoco/menu.xhtml</to-view-id>
+               </navigation-case>
+               <navigation-case>
+                       <from-outcome>piatto</from-outcome>
+	               <to-view-id>/cuoco/piatto.xhtml</to-view-id>
+               </navigation-case>
+              <navigation-case>
+                       <from-outcome>home</from-outcome>
+	               <to-view-id>/cuoco/home.xhtml</to-view-id>
+              </navigation-case>
+              <navigation-case>
+                       <from-outcome>ordini</from-outcome>
+	               <to-view-id>/cuoco/ordini.xhtml</to-view-id>
+               </navigation-case>
+              <navigation-case>
+                       <from-outcome>menuModifica</from-outcome>
+	               <to-view-id>/cuoco/menuModifica.xhtml</to-view-id>
+               </navigation-case>                   
+        </navigation-rule>
+        <!-- /CUOCO/ORDINI.XHTML -->
+        <navigation-rule>
+            <from-view-id>/cuoco/ordini.xhtml</from-view-id>    
+             <navigation-case>
+                       <from-outcome>login</from-outcome>
+	               <to-view-id>/login.xhtml</to-view-id>
+                       <redirect/>
+               </navigation-case>
+               <navigation-case>
+                       <from-outcome>menu</from-outcome>
+	               <to-view-id>/cuoco/menu.xhtml</to-view-id>
+               </navigation-case>
+               <navigation-case>
+                       <from-outcome>piatto</from-outcome>
+	               <to-view-id>/cuoco/piatto.xhtml</to-view-id>
+               </navigation-case>
+              <navigation-case>
+                       <from-outcome>home</from-outcome>
+	               <to-view-id>/cuoco/home.xhtml</to-view-id>
+              </navigation-case>
+              <navigation-case>
+                       <from-outcome>ordini</from-outcome>
+	               <to-view-id>/cuoco/ordini.xhtml</to-view-id>
+               </navigation-case>                   
+        </navigation-rule>        
+        
+        
+        <!-- /CUOCO/menuModifica.XHTML -->      
+        <navigation-rule>
+                    <from-view-id>/cuoco/menuModifca.xhtml</from-view-id>
+                    <navigation-case>
+                        <from-outcome>menuModificaAdd</from-outcome>
+                        <to-view-id>/cuoco/menuModificaAdd.xhtml</to-view-id>
+                    </navigation-case>
+        </navigation-rule>                                        
+       <!-- /AMMINISTRATORE/HOME.XHTML -->
+        <navigation-rule>
+            <from-view-id>/amministratore/home.xhtml</from-view-id>
+               <navigation-case>
+                       <from-outcome>login</from-outcome>
+	               <to-view-id>/login.xhtml</to-view-id>
+               </navigation-case>                   
+        </navigation-rule>
+       <!-- /IMPIEGATO/HOME.XHTML -->
+        <navigation-rule>
+            <from-view-id>/impiegato/home.xhtml</from-view-id>
+               <navigation-case>
+                       <from-outcome>login</from-outcome>
+	               <to-view-id>/login.xhtml</to-view-id>
+               </navigation-case>
+               <navigation-case>
+                   <from-outcome>menuModifica</from-outcome>
+                   <to-view-id>/impiegato/menuModifica.xhtml</to-view-id>
+               </navigation-case>                   
+        </navigation-rule>            
+    
+</faces-config>

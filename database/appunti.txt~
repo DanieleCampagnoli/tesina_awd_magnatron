@@ -1,0 +1,20 @@
+#ENTRA DA AMMINISTRATORE MYSQL
+mysql -u root -p
+
+passowrd: invio e basta
+
+#CREAZIONE DATABASE
+create database magna_tron_db;
+
+#PERMESSI A UTENTE
+grant all on magna_tron_db.* to magna_tron_user@localhost identified by 'magna_tron'; 
+flush privileges;
+quit;
+
+#ESEGUI SCRIPT SQL
+
+mysql -D magna_tron_db -u magna_tron_user -p < script.sql
+
+
+#PROBLEMA DELLE GERARCHIE LIVELLO APPLICATIVO
+http://blog.xebia.com/jpa-implementation-patterns-mapping-inheritance-hierarchies/

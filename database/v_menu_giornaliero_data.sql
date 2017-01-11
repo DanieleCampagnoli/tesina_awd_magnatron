@@ -1,0 +1,3 @@
+CREATE ALGORITHM=UNDEFINED DEFINER=`magna_tron_user`@`localhost` SQL SECURITY DEFINER VIEW `magna_tron_db`.`v_menu_giornaliero_data` AS select `mg`.`ID_MENU_SETTIMANALE` AS `ID_MENU_SETTIMANALE`,`mg`.`GIORNO` AS `GIORNO`,cast((`ms`.`DATA_INIZIO` + (`mg`.`GIORNO` - 1)) as date) AS `DATA_MENU` from (`magna_tron_db`.`menu_giornaliero` `mg` join `magna_tron_db`.`menu_settimanale` `ms` on((`mg`.`ID_MENU_SETTIMANALE` = `ms`.`ID_MENU_SETTIMANALE`)));
+
+COMMIT;

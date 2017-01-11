@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <h:body>
+        <ui:composition>
+           <h:outputStylesheet  library="css" name="magnaTron.css"  />
+           <div id="top"/>
+           <div id="userBar">
+              <ui:insert name="userBar">
+                  <ui:include src="/template/userBar.xhtml"/>
+               </ui:insert>
+           </div>
+           <div id="navBar">
+              <ui:insert name="navBar">
+                  <ui:include src="navBar.xhtml"/>
+              </ui:insert>
+           </div>   
+       </ui:composition>     
+    </h:body>
+</html>
+

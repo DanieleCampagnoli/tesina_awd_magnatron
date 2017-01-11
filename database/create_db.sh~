@@ -1,0 +1,7 @@
+#!/bin/bash
+susername=magna_tron_user
+spassword=magna_tron
+#delete tables
+./dropTables.sh $susername $spassword magna_tron_db
+#rebuild tables
+mysql -D magna_tron_db -u$susername -p$spassword < persona.sql

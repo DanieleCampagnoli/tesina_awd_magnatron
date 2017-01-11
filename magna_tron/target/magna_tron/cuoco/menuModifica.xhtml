@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Modifica Menu</title>
+    </h:head>
+    <h:body>
+        <h:outputStylesheet library="css" name="magnaTron.css"  />
+        <!-- torna a menu -->
+        <h:link outcome="menu" value="Back"></h:link>
+        
+        <!-- seleziona giorno -->
+            <h:form>
+                <h:commandButton action="#{menu.addMenuGiornaliero()}" 
+                               value="+ aggiungi giorno" />
+            </h:form>
+        <!-- tabella giorno, portata, nome piatto -->           
+            <h:dataTable value="#{menu.getCurrentMenuGiornalieri()}" var="mg"
+                         styleClass="table"
+                         headerClass="table-header"
+                         rowClasses="table-row">
+                                <h:column>
+                                    <f:facet name="header">giorno</f:facet>
+                                    <h:outputText value="#{mg.id.giorno}"/>
+                                    <h:form>
+                                        <h:commandButton action="#{menu.setIdMenuGiornaliero(mg.id.giorno)}" 
+                                                         value="+ aggiungi" />
+                                    </h:form>                               
+    	 		        </h:column>
+                                <h:column>
+    				     <f:facet name="header">dettaglio</f:facet>
+                                     <h:dataTable value="#{mg.primi}" var="p">
+                                         <h:column>
+                                             <f:facet name="header">portata</f:facet>
+                                             <h:outputText value="primo"/>   
+    			                 </h:column>
+                                         <h:column>
+    				              <f:facet name="header">piatto</f:facet>
+                                              <h:outputText value="#{p.nome}"/>   
+    			                 </h:column>
+                                         <h:column>
+                                              <h:form>
+                                                <h:commandButton action="#{menu.removePiatto(mg.id.giorno,p)}" 
+                                                         value="elimina" />
+                                              </h:form>             
+                                        </h:column>         
+                                      </h:dataTable>
+                                      <h:dataTable value="#{mg.secondi}" var="p">
+                                          <h:column>
+                                              <h:outputText value="secondo"/>   
+    			                  </h:column>
+                                          <h:column>
+                                               <h:outputText value="#{p.nome}"/>   
+    			                  </h:column>
+                                          <h:column>
+                                               <h:form>
+                                                   <h:commandButton action="#{menu.removePiatto(mg.id.giorno,p)}" 
+                                                            value="elimina" />
+                                               </h:form>             
+                                          </h:column>
+                                
+                                      </h:dataTable>
+                                     <h:dataTable value="#{mg.contorni}" var="p">
+                                           <h:column>
+                                                <h:outputText value="contorno"/>   
+    			                   </h:column>
+                                           <h:column>
+                                                <h:outputText value="#{p.nome}"/>   
+    			                  </h:column>
+                                         <h:column>
+                                             <h:form>
+                                                   <h:commandButton action="#{menu.removePiatto(mg.id.giorno,p)}" 
+                                                         value="elimina" />
+                                             </h:form>             
+                                         </h:column>
+                                     </h:dataTable>            
+                                    <h:dataTable value="#{mg.dessert}" var="p">
+                                           <h:column>
+                                               <h:outputText value="dessert"/>   
+    			                   </h:column>
+                                           <h:column>
+                                               <h:outputText value="#{p.nome}"/>   
+    			                   </h:column>
+                                           <h:column>
+                                                <h:form>
+                                                    <h:commandButton action="#{menu.removePiatto(mg.id.giorno,p)}" 
+                                                             value="elimina" />
+                                                </h:form>             
+                                           </h:column>
+                                    </h:dataTable>
+    			        </h:column>
+           </h:dataTable>            
+    </h:body>
+</html>
+
